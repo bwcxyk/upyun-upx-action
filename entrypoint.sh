@@ -10,8 +10,8 @@ apk update \
  && mv upx /usr/local/bin/upx
 
 ### 执行upx upload
-upx login ${{ inputs.bucket }} ${{ inputs.operator }} ${{ inputs.operator_password }}
+upx login ${inputs.bucket} ${inputs.operator} ${inputs.operator_password}
 echo "start upx upload!"
-upx sync ${{ inputs.local_path }} ${{ inputs.remote_path }} --delete
+upx sync ${inputs.local_path} ${inputs.remote_path} --delete
 echo "upx upload successful!"
 upx logout
