@@ -11,11 +11,11 @@ inputs:
   UP_OPERATOR_PASSWORD:
     description: '操作员密码'
     required: true
-  LOCAL_PATH:
+  local_path:
     description: 'will put all file under this path'
     required: true
     default: ./public/*
-  REMOTE_PATH:
+  remote_path:
     description: 'files will copy to under remote_path'
     required: true
     default: /
