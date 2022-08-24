@@ -2,13 +2,13 @@ name: 'upyun-upx-action'
 author: 'YaoKun <yaokun@bwcxtech.com>'
 description: 'Deploy your files to upyun using upyun-upx.'
 inputs:
-  UP_BUCKET:
+  bucket:
     description: '服务名'
     required: true
-  UP_OPERATOR:
+  operator:
     description: '操作员'
     required: true
-  UP_OPERATOR_PASSWORD:
+  operator_password:
     description: '操作员密码'
     required: true
   local_path:
