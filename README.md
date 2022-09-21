@@ -14,25 +14,39 @@ on:
     branches:
       - main
 
+env:
+    TZ: Asia/Shanghai # 设置当前环境时区
+
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v2
-      - 
-        name: Setup Hugo
+      - name: Git Configuration
+        run: |
+          git config --global core.quotePath false
+          git config --global core.autocrlf false
+          git config --global core.safecrlf true
+          git config --global core.ignorecase false
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-      -
-        name: Build
-        run: hugo --minify
-      -
-        name: deploy-upyun
-        uses: bwcxyk/upyun-upx-action@main
+          
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          
+      - name: Build
+        run:
+          hugo --minify
+          
+      - name: deploy-upyun
+        uses: bwcxyk/upyun-upx-action@1.1
         env:
           bucket: ${{ secrets.BUCKET }}
           operator: ${{ secrets.OPERATOR }}
