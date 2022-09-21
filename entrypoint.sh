@@ -6,16 +6,14 @@ apk update \
  && apk add --no-cache wget \
  && wget -O upx.tar.gz http://collection.b0.upaiyun.com/softwares/upx/upx_0.3.6_linux_x86_64.tar.gz \
  && tar -zxf upx.tar.gz \
- && chmod +x upx \
- && mv upx /usr/local/bin/upx
+ && chmod +x upx
 
 ### 执行upx upload
-upx login ${bucket} ${operator} ${operator_password}
+./upx login ${bucket} ${operator} ${operator_password}
 echo "start delete!"
-upx ls
-upx rm -a /*
+./upx rm -a hugo/*
 echo "start upx upload!"
-upx put ${local_path} ${remote_path}
-#upx sync ${local_path} ${remote_path} --delete
+./upx put ${local_path} ${remote_path}
+#./upx sync ${local_path} ${remote_path} --delete
 echo "upx upload successful!"
-upx logout
+./upx logout
