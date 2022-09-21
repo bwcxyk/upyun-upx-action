@@ -10,11 +10,11 @@ apk update \
  && mv upx /usr/local/bin/upx
 
 ### 执行upx upload
-upx login ${bucket} ${operator} ${operator_password}
+/usr/local/bin/upx login ${bucket} ${operator} ${operator_password}
 echo "start delete!"
-upx rm -a /*
+/usr/local/bin/upx rm -a /*
 echo "start upx upload!"
-upx put ${local_path} ${remote_path}
-#upx sync ${local_path} ${remote_path} --delete
+/usr/local/bin/upx put ${local_path} ${remote_path}
+#/usr/local/bin/upx sync ${local_path} ${remote_path} --delete
 echo "upx upload successful!"
-upx logout
+/usr/local/bin/upx logout
