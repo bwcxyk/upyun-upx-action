@@ -14,6 +14,7 @@ upx login ${bucket} ${operator} ${operator_password}
 echo "start delete!"
 upx rm -a *
 echo "start upx upload!"
-upx sync ${local_path} ${remote_path} --delete
+upx put ${local_path} ${remote_path}
+#upx sync ${local_path} ${remote_path} --delete
 echo "upx upload successful!"
 upx logout
