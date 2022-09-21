@@ -10,9 +10,13 @@ apk update \
 
 ### 执行upx upload
 ./upx login ${bucket} ${operator} ${operator_password}
-echo "start delete!"
-./upx rm -a hugo/*
-echo "start upx upload!"
+
+if [[ $(./upx ls) ]]; then
+    echo "start delete!"
+    ./upx rm -a hugo/*
+  else
+    echo "start upx upload!"
+fi
 ./upx put ${local_path} ${remote_path}
 #./upx sync ${local_path} ${remote_path} --delete
 echo "upx upload successful!"
