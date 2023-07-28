@@ -46,7 +46,7 @@ jobs:
           hugo --minify
           
       - name: deploy-upyun
-        uses: bwcxyk/upyun-upx-action@1.1
+        uses: bwcxyk/upyun-upx-action@1.2
         env:
           bucket: ${{ secrets.BUCKET }}
           operator: ${{ secrets.OPERATOR }}

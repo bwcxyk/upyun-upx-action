@@ -2,9 +2,30 @@ name: 'upyun-upx-action'
 author: 'YaoKun <yaokun@bwcxtech.com>'
 description: 'Deploy your files to upyun using upyun-upx.'
 
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+#定义需要输入的参数
+inputs:
+  bucket: 
+    description: "服务(bucket)的名称"
+    required: true
+  operator: 
+    description: "操作员名"
+    required: true
+  operator_password: 
+    description: "操作员密码"
+    required: true
+  local_path: 
+    description: "本地的路径"
+    required: true
+    default: ''
+  remote_path: 
+    description: "远程文件路径"
+    required: true
+    default: ''
+
 branding:
   color: 'blue'
   icon: 'upload-cloud'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
