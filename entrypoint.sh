@@ -4,8 +4,8 @@ set -ex
 
 apk update \
  && apk add --no-cache wget \
- && wget -O upx.tar.gz https://collection.b0.upaiyun.com/softwares/upx/upx_0.4.1_linux_x86_64.tar.gz \
- && tar -zxf upx.tar.gz \
+ && wget -O upx.tar.gz https://github.com/upyun/upx/releases/download/v0.4.3/upx_0.4.3_Linux_x86_64.tar.gz \
+ && tar -zxf upx_0.4.3_Linux_x86_64.tar.gz \
  && chmod +x upx \
  && mv upx /usr/local/bin/upx
 
