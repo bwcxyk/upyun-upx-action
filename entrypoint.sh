@@ -12,7 +12,7 @@ apk update \
 ./upx login ${bucket} ${operator} ${operator_password}
 
 # 删除所有文件
-./upx rm -a ${remote_path}*
+"./upx rm -a ${remote_path}"
 # 上传文件
 ./upx upload -all --remote ${remote_path} ${local_path}/*
 # 增量同步文件
