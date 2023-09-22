@@ -14,6 +14,7 @@ upx login ${bucket} ${operator} ${operator_password}
 
 # 删除所有文件
 upx cd ${remote_path}
+upx ls
 upx rm -a *
 echo "upx rm successful!"
 # 上传文件
