@@ -19,6 +19,6 @@ upx login ${bucket} ${operator} ${operator_password}
 # 上传文件
 # upx upload -all --remote ${remote_path} ${local_path}/*
 # 增量同步文件
-upx -q sync ${local_path} ${remote_path}
+upx -q sync -w 10 ${local_path} ${remote_path}
 echo "upx upload successful!"
 upx logout
