@@ -12,10 +12,11 @@ apk update \
 ./upx login ${bucket} ${operator} ${operator_password}
 
 # 删除所有文件
-"./upx rm -a ${remote_path}*"
+./upx cd ${remote_path}
+./upx rm -a *
 # 上传文件
 ./upx upload -all --remote ${remote_path} ${local_path}/*
 # 增量同步文件
-# ./upx sync ${local_path} ${remote_path} --delete --strong
+# ./upx sync ${local_path} ${remote_path}
 echo "upx upload successful!"
 ./upx logout
