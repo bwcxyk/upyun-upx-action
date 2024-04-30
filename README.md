@@ -1,6 +1,6 @@
 # upyun-upx-action
 > 又拍云目前已支持S3协议，推荐使用jakejarvis/s3-sync-action
-
+------
 通过[又拍云upx](https://github.com/upyun/upx)推送文件到又拍云的云存储
 
 Example usage
