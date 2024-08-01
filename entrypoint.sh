@@ -1,6 +1,4 @@
-#!/bin/sh -l
-
-set -ex
+#!/bin/sh
 
 apk update \
  && apk add --no-cache wget \
@@ -13,7 +11,6 @@ apk update \
 upx login ${UPX_SERVICENAME} ${UPX_OPERATOR} ${UPX_PASSWORD}
 
 # 删除所有文件
-# upx cd ${remote_path}
 # upx rm -d
 # echo "upx rm successful!"
 # 上传文件
