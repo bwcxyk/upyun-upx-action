@@ -1,5 +1,4 @@
 # upyun-upx-action
-> 又拍云目前已支持S3协议，推荐使用jakejarvis/s3-sync-action
 ------
 通过[又拍云upx](https://github.com/upyun/upx)推送文件到又拍云的云存储
 
@@ -48,20 +47,20 @@ jobs:
           hugo --minify
           
       - name: deploy-upyun
-        uses: bwcxyk/upyun-upx-action@1.2
+        uses: bwcxyk/upyun-upx-action@1.3
         env:
-          bucket: ${{ secrets.BUCKET }}
-          operator: ${{ secrets.OPERATOR }}
-          operator_password: ${{ secrets.OPERATOR_PASSWORD }}
-          local_path: ./public/
-          remote_path: /
+          UPX_SERVICENAME: ${{ secrets.UPX_SERVICENAME }}
+          UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
+          UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
+          LOCAL_DIR: ./public/
+          REMOTE_DIR: /
 ```
 Environment
-| Environment       | Description  |
-| ----------------- | ------------ |
-| BUCKET            | 服务名称     |
-| OPERATOR          | 操作员       |
-| OPERATOR_PASSWORD | 操作员密码   |
-| local_path        | 本地文件路径 |
-| remote_path       | 远程文件路径 |
+| Environment     | Description  |
+| --------------- | ------------ |
+| UPX_SERVICENAME | 服务名称     |
+| UPX_OPERATOR    | 操作员       |
+| UPX_PASSWORD    | 操作员密码   |
+| LOCAL_DIR       | 本地文件路径 |
+| REMOTE_DIR      | 远程文件路径 |
 

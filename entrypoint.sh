@@ -10,15 +10,15 @@ apk update \
  && mv upx /usr/local/bin/upx
 
 ### 执行upx upload
-upx login ${bucket} ${operator} ${operator_password}
+upx login ${UPX_SERVICENAME} ${UPX_OPERATOR} ${UPX_PASSWORD}
 
 # 删除所有文件
 # upx cd ${remote_path}
-# upx rm -a || exit 0
+# upx rm -d
 # echo "upx rm successful!"
 # 上传文件
 # upx upload -all --remote ${remote_path} ${local_path}/*
 # 增量同步文件
-upx -q sync -w 10 ${local_path} ${remote_path}
+upx -q sync -w 10 ${LOCAL_DIR} ${REMOTE_DIR}
 echo "upx upload successful!"
 upx logout
