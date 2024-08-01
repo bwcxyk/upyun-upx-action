@@ -19,6 +19,7 @@ upx login ${UPX_SERVICENAME} ${UPX_OPERATOR} ${UPX_PASSWORD}
 # 上传文件
 # upx upload -all --remote ${remote_path} ${local_path}/*
 # 增量同步文件
-upx -q sync -w 10 ${LOCAL_DIR} ${REMOTE_DIR}
+# upx -q sync -w 10 ${LOCAL_DIR} ${REMOTE_DIR}
+upx sync -w 10 ${LOCAL_DIR} ${REMOTE_DIR}
 echo "upx upload successful!"
 upx logout
