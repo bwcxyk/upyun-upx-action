@@ -52,7 +52,7 @@ jobs:
           UPX_SERVICENAME: ${{ secrets.UPX_SERVICENAME }}
           UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
           UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
-          LOCAL_DIR: ./public/
+          LOCAL_DIR: public
           REMOTE_DIR: /
 ```
 Environment
